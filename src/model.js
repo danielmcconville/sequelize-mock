@@ -149,8 +149,8 @@ fakeModel.prototype.belongsToMany = fakeModel.prototype.hasMany = function (item
 	this._functions['create' + singular] = item.create ? item.create.bind(item) : noop;
 	this._functions['remove' + singular] = noop;
 	this._functions['remove' + plural] = noop;
-	this._functions['has' + singular] = function () { return Promise.resolve(false); };
-	this._functions['has' + plural] = function () { return Promise.resolve(false); };
+	this._functions['has' + singular] = function () { return Promise.resolve(true); };
+	this._functions['has' + plural] = function () { return Promise.resolve(true); };
 	this._functions['count' + plural] = function () { return Promise.resolve(0); };
 	
 	return {
