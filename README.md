@@ -1,5 +1,7 @@
 # Sequelize Mocker
-A simple mocking interface designed for applications that use the [sequelize.js](http://sequelizejs.com) library. This library was forked from [https://github.com/BlinkUX/sequelize-mock](sequelize-mock). This library is specifically for testing code relying on Sequelize models **and is therefore a very bare library at the moment**. The more complex functionality of Sequelize has not been included and the library will likely be fleshed out to include this functionality as needed.
+A simple mocking interface designed for applications that use the [sequelize.js](http://sequelizejs.com) library. This library was forked from [https://github.com/BlinkUX/sequelize-mock](sequelize-mock). This project was forked as I required the auto-generated 'has..' methods to return true, rather than false. Everything else is as per the original repo.
+
+This library is specifically for testing code relying on Sequelize models **and is therefore a very bare library at the moment**. The more complex functionality of Sequelize has not been included and the library will likely be fleshed out to include this functionality as needed.
 
 Once Mock models have been defined, the mock models should be drop in replacements for your Sequelize model objects. Data is not retrieved from a database and instead is returned based on the setup of the mock objects, the query being made, and other applied or included information.
 
