@@ -15,7 +15,12 @@ function fakeModelInstance (defaults, obj) {
 	this._values.updatedAt = this._values.updatedAt || new Date();
 }
 fakeModelInstance.prototype.set = function(key, val) { this._values[key] = val; };
-fakeModelInstance.prototype.get = function (key) { return this._values[key]; };
+fakeModelInstance.prototype.get = function (key) {
+  if(typeof key === 'object' && key.plain) {
+    return this._values
+  }
+  return this._values[key];
+};
 fakeModelInstance.prototype.save = function () { return bluebird.resolve(this); };
 fakeModelInstance.prototype.destroy = function () { return bluebird.resolve(); };
 fakeModelInstance.prototype.reload = function () { return bluebird.resolve(this); };
